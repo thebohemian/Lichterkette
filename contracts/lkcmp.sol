@@ -49,6 +49,12 @@ contract LichterkettenMasterKontrollProgramm {
 		}
 	}
 	
+	function kill() {
+		if (msg.sender == owner) {
+			suicide(msg.sender);
+		}
+	}
+	
 	function() {
 		throw;
 	}
