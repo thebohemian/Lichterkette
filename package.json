@@ -4,9 +4,11 @@
     "web3": "^0.15.2"
   },
   "devDependencies": {
+    "http-server": "0.8.5",
     "browserify": "^13.0.0",
     "ethereum-sandbox-client": "git+https://github.com/ether-camp/ethereum-sandbox-client.git",
     "gulp": "^3.9.1",
+    "gulp-cli": "1.2.1",
     "gulp-mocha": "^2.2.0",
     "mocha": "^2.4.5",
     "solidity-compiler": "git+https://github.com/ether-camp/solidity-compiler.git",
@@ -14,6 +16,7 @@
     "watchify": "^3.7.0"
   },
   "scripts": {
+    "gulp": "gulp",
     "start-server": "node server/main.js",
     "start": "http-server web -c-1"
   }
