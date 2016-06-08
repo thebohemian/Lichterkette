@@ -4,6 +4,7 @@ var abi = [{"constant":false,"inputs":[{"name":"b","type":"address"}],"name":"se
 
 var sandboxId = '0c1d6a2f67';
 var url = 'https://' + window.location.hostname + ':8555/sandbox/' + sandboxId;
+
 var web3 = new Web3(new Web3.providers.HttpProvider(url));
 
 web3.eth.defaultAccount = '0xdedb49385ad5b94a16f236a6890cf9e0b1e30392';

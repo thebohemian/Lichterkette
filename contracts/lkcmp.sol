@@ -30,7 +30,8 @@ contract LichterkettenMasterKontrollProgramm {
 	
 	function operate(uint x, uint y, uint z) {
 		if (msg.value >= price) {
-			if (now > reservedUntil) {
+			uint timestamp = now;
+			if (timestamp > reservedUntil) {
 				address receiver = (beneficiary == 0) ? owner : beneficiary;
 				receiver.send(msg.value);
 				
@@ -38,7 +39,7 @@ contract LichterkettenMasterKontrollProgramm {
 				
 				Operated(msg.sender, x, y, z);
 			} else {
-				Busy(reservedUntil - now);
+				Busy(reservedUntil - timestamp);
 				
 				// Refund
 				msg.sender.send(msg.value);

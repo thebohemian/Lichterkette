@@ -14,6 +14,7 @@
     "watchify": "^3.7.0"
   },
   "scripts": {
+    "start-server": "node server/main.js",
     "start": "http-server web -c-1"
   }
 }
