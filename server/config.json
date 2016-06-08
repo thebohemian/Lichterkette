@@ -1,4 +1,16 @@
 {
-    "sandboxId": "0c1d6a2f67",
-    "hostname": "thebohemian.by.ether.camp"
+	"profile": "ethercamp",
+	"mixide" : {
+	    "provider": "nodeUrl",
+	    "nodeUrl": "http://localhost:43294/rpc/",
+		"defaultAccount": "0x38f388fadf4a6a35c61c3f88194ec5ae162c8944',",
+		"contractAddress": "f025d81196b72fba60a1d4dddad12eeb8360d828"
+	},
+	"ethercamp": {
+	    "provider": "sandbox",
+	    "sandboxId": "0c1d6a2f67",
+	    "hostname": "thebohemian.by.ether.camp",
+		"defaultAccount": "0xdedb49385ad5b94a16f236a6890cf9e0b1e30392",
+		"contractAddress": "0x17956ba5f4291844bc25aedb27e69bc11b5bda39"
+	}
 }
