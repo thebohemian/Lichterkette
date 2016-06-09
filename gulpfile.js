@@ -14,7 +14,7 @@ gulp.task('browserify', function() {
     .bundle()
     .pipe(source(destFile))
     .pipe(gulp.dest(destFolder))
-    && browserify(sourceFile)
+    && browserify(sourceFileOutput)
     .bundle()
     .pipe(source(destFileOutput))
     .pipe(gulp.dest(destFolder));
