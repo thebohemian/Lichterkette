@@ -1,0 +1,2 @@
+* move out sandboxId and similar variables to a common file
+* introduce a npm command to update the contract ABI
