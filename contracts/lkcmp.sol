@@ -1,15 +1,16 @@
 //Sample contract
 contract LichterkettenMasterKontrollProgramm {
 	uint constant price = 10 finney;
-	uint constant reservationTime = 20 seconds;
+	uint constant reservationTime = 10 seconds;
 	
 	address owner;
 	address beneficiary;
 	
 	uint reservedUntil;
 			
-	event Operated(address who, uint x, uint y, uint z);
+	event Operated(address who, uint x, uint y, uint z, uint timespan);
 	event Busy(uint remainingTime);
+	event BeneficiaryChanged(address receiver);
 
 	function LichterkettenMasterKontrollProgramm() {
 		owner = msg.sender;
@@ -18,14 +19,16 @@ contract LichterkettenMasterKontrollProgramm {
 	
 	function setBeneficiary(address b) {
 		// Reject non-owners to set the beneficiary
-		if (msg.sender != owner)
-			return;
+		if (msg.sender != owner) {
+			throw;
+		}
 		
 		if (b == msg.sender) {
 			beneficiary = 0;
 		} else {
 			beneficiary = b;
 		}
+		BeneficiaryChanged((beneficiary == 0) ? owner : beneficiary);
 	}
 	
 	function operate(uint x, uint y, uint z) {
@@ -35,9 +38,21 @@ contract LichterkettenMasterKontrollProgramm {
 				address receiver = (beneficiary == 0) ? owner : beneficiary;
 				receiver.send(msg.value);
 				
-				reservedUntil = now + reservationTime;
+				uint value = msg.value;
+				uint time = 0;
+				while (value >= price) {
+					time += reservationTime;
+					value -= price;
+				}
 				
-				Operated(msg.sender, x, y, z);
+				reservedUntil = now + time;
+				
+				Operated(msg.sender, x, y, z, time);
+				
+				// Send unused money back
+				if (value > 0) {
+					msg.sender.send(value);
+				}
 			} else {
 				Busy(reservedUntil - timestamp);
 				
