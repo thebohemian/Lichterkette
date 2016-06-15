@@ -1,6 +1,6 @@
 var Web3 = require('web3');
 
-var sandboxId = '0e77f0ff7a';
+var sandboxId = '791ea60f74';
 var abi = [{"constant":false,"inputs":[{"name":"b","type":"address"}],"name":"setBeneficiary","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"kill","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"},{"name":"z","type":"uint256"}],"name":"operate","outputs":[],"type":"function"},{"inputs":[],"type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"who","type":"address"},{"indexed":false,"name":"x","type":"uint256"},{"indexed":false,"name":"y","type":"uint256"},{"indexed":false,"name":"z","type":"uint256"},{"indexed":false,"name":"timespan","type":"uint256"}],"name":"Operated","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"remainingTime","type":"uint256"}],"name":"Busy","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"receiver","type":"address"}],"name":"BeneficiaryChanged","type":"event"}];
 var hostname = (window.location.hostname === "localhost" ? "thebohemian.by.ether.camp" : window.location.hostname);
 var url = 'https://' + hostname + ':8555/sandbox/' + sandboxId;

@@ -8,7 +8,7 @@
 	},
 	"ethercamp": {
 	    "provider": "sandbox",
-	    "sandboxId": "0e77f0ff7a",
+	    "sandboxId": "791ea60f74",
 	    "hostname": "thebohemian.by.ether.camp",
 		"defaultAccount": "0xdedb49385ad5b94a16f236a6890cf9e0b1e30392",
 		"contractAddress": "0x17956ba5f4291844bc25aedb27e69bc11b5bda39"
